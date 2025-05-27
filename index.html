@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro Safadinha</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: url('https://i.imgur.com/Rbt710R.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            overflow: hidden;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 2px 2px 5px black;
+        }
+        h1 {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px;
+        }
+        button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        .texto {
+            position: absolute;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Pedro Safadinha</h1>
+    <button onclick="mostrar()">JUSTO</button>
+
+    <script>
+        function mostrar() {
+            const texto = document.createElement('div');
+            texto.classList.add('texto');
+            texto.innerText = 'Pedro Safadinha';
+
+            const tamanho = Math.floor(Math.random() * 60) + 20; // tamanho entre 20px e 80px
+            texto.style.fontSize = tamanho + 'px';
+
+            const larguraTela = window.innerWidth;
+            const alturaTela = window.innerHeight;
+
+            const posX = Math.floor(Math.random() * (larguraTela - 100)); // ajuste margem
+            const posY = Math.floor(Math.random() * (alturaTela - 100));
+
+            texto.style.left = posX + 'px';
+            texto.style.top = posY + 'px';
+
+            document.body.appendChild(texto);
+        }
+    </script>
+
+</body>
+</html>
